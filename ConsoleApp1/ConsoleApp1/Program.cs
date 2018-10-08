@@ -11,6 +11,11 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Console.WriteLine("hello world");
+            Console.WriteLine("   /|");
+            Console.WriteLine("  / |");
+            Console.WriteLine(" /  |");
+            Console.WriteLine("/___|");
+            Console.ReadLine();
         }
     }
 }
