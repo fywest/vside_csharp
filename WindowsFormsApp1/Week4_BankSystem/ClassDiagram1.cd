@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BankSystem.Account">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAASAAACEEgCAAAACAAAAAAAAACAgAAAAIAQBEAAEgA=</HashCode>
+      <FileName>Account.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BankSystem.ATM">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQCAAAEAAAAAAAAAAAIAAIAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ATM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BankSystem.Bank" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgQAAEIAAAAABAAAACAAAAIAAAAAAAAAAAACQAAA=</HashCode>
+      <FileName>Bank.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BankSystem.BankDemo">
+    <Position X="8.75" Y="6" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>BankDemo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BankSystem.CreditCard">
+    <Position X="3.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEEAAAAABAAAAAQAAAAEAAAAAAQAAAEAAAAA=</HashCode>
+      <FileName>CreditCard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BankSystem.Program">
+    <Position X="8.75" Y="4.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BankSystem.BadCashException">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BadCashException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="BankSystem.IPayment" Collapsed="true">
+    <Position X="3.5" Y="5.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ipayment.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BankSystem.IPrintable" Collapsed="true">
+    <Position X="3.5" Y="4.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IPrintable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="BankSystem.CardType">
+    <Position X="3.5" Y="6.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAgKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CreditCard.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BankSystem.BankType">
+    <Position X="0.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAIAAAAQAEAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>BankType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

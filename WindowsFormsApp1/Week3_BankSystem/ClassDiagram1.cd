@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Account">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABSAAACAEACAAAACEAAAAAAAACAgAAAAIAQAEAAEgA=</HashCode>
+      <FileName>Account.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ATM">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQCAAAEAAAAAAAAAAAIAAAACAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ATM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bank">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAABAAAAAAQAAIAEAAAAAAAAAAIQAAA=</HashCode>
+      <FileName>Bank.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BankDemo">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>BankDemo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BankSystem.Program" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CreditCard">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAABAEAAAQAAAAEBAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>CreditCard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
