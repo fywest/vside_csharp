@@ -10,11 +10,11 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("hello Number guesser");
-            Console.WriteLine("   /|");
-            Console.WriteLine("  / |");
-            Console.WriteLine(" /  |");
-            Console.WriteLine("/___|");
+            //Console.WriteLine("hello Number guesser");
+            //Console.WriteLine("   /|");
+            //Console.WriteLine("  / |");
+            //Console.WriteLine(" /  |");
+            //Console.WriteLine("/___|");
             //Console.ReadLine();
 
 
