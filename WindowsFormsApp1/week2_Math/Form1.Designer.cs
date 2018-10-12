@@ -78,7 +78,7 @@
             this.grpNumRange.Size = new System.Drawing.Size(255, 52);
             this.grpNumRange.TabIndex = 0;
             this.grpNumRange.TabStop = false;
-            this.grpNumRange.Text = "数字范围";
+            this.grpNumRange.Text = "number range";//"数字范围";
             // 
             // radbtn100
             // 
@@ -88,7 +88,7 @@
             this.radbtn100.Size = new System.Drawing.Size(67, 17);
             this.radbtn100.TabIndex = 2;
             this.radbtn100.TabStop = true;
-            this.radbtn100.Text = "100以内";
+            this.radbtn100.Text = "1-100";//"100以内";
             this.radbtn100.UseVisualStyleBackColor = true;
             // 
             // radbtn20
@@ -99,7 +99,7 @@
             this.radbtn20.Size = new System.Drawing.Size(61, 17);
             this.radbtn20.TabIndex = 1;
             this.radbtn20.TabStop = true;
-            this.radbtn20.Text = "20以内";
+            this.radbtn20.Text = "1-20";//"20以内";
             this.radbtn20.UseVisualStyleBackColor = true;
             // 
             // radbtn10
@@ -110,7 +110,7 @@
             this.radbtn10.Size = new System.Drawing.Size(61, 17);
             this.radbtn10.TabIndex = 0;
             this.radbtn10.TabStop = true;
-            this.radbtn10.Text = "10以内";
+            this.radbtn10.Text = "1-10";//"10以内";
             this.radbtn10.UseVisualStyleBackColor = true;
             // 
             // chkDispNext
@@ -120,7 +120,7 @@
             this.chkDispNext.Name = "chkDispNext";
             this.chkDispNext.Size = new System.Drawing.Size(110, 17);
             this.chkDispNext.TabIndex = 1;
-            this.chkDispNext.Text = "自动显示下一题";
+            this.chkDispNext.Text = "auto display next";//"自动显示下一题";
             this.chkDispNext.UseVisualStyleBackColor = true;
             this.chkDispNext.CheckedChanged += new System.EventHandler(this.chkDispNext_CheckedChanged);
             // 
@@ -130,7 +130,7 @@
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
             this.btnNext.TabIndex = 2;
-            this.btnNext.Text = "下一题";
+            this.btnNext.Text = "next";//"下一题";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
@@ -140,7 +140,7 @@
             this.btnFast.Name = "btnFast";
             this.btnFast.Size = new System.Drawing.Size(75, 23);
             this.btnFast.TabIndex = 3;
-            this.btnFast.Text = "快些";
+            this.btnFast.Text = "fast";//"快些";
             this.btnFast.UseVisualStyleBackColor = true;
             this.btnFast.Click += new System.EventHandler(this.btnFast_Click);
             // 
@@ -150,7 +150,7 @@
             this.btnSlow.Name = "btnSlow";
             this.btnSlow.Size = new System.Drawing.Size(75, 23);
             this.btnSlow.TabIndex = 4;
-            this.btnSlow.Text = "慢些";
+            this.btnSlow.Text = "slow";// 慢些";
             this.btnSlow.UseVisualStyleBackColor = true;
             this.btnSlow.Click += new System.EventHandler(this.btnSlow_Click);
             // 
@@ -161,7 +161,7 @@
             this.chkDispAnswer.Name = "chkDispAnswer";
             this.chkDispAnswer.Size = new System.Drawing.Size(98, 17);
             this.chkDispAnswer.TabIndex = 5;
-            this.chkDispAnswer.Text = "自动显示答案";
+            this.chkDispAnswer.Text = "auto answer";//"自动显示答案";
             this.chkDispAnswer.UseVisualStyleBackColor = true;
             this.chkDispAnswer.CheckedChanged += new System.EventHandler(this.chkDispAnswer_CheckedChanged);
             this.chkDispAnswer.Click += new System.EventHandler(this.chkDispAnswer_Click);
@@ -241,7 +241,7 @@
             this.grpOpmode.Size = new System.Drawing.Size(255, 52);
             this.grpOpmode.TabIndex = 12;
             this.grpOpmode.TabStop = false;
-            this.grpOpmode.Text = "运算类型";
+            this.grpOpmode.Text = "operation";// 运算类型";
             // 
             // radbtnDiv
             // 
@@ -251,7 +251,7 @@
             this.radbtnDiv.Size = new System.Drawing.Size(37, 17);
             this.radbtnDiv.TabIndex = 3;
             this.radbtnDiv.TabStop = true;
-            this.radbtnDiv.Text = "除";
+            this.radbtnDiv.Text = "divide";//除";
             this.radbtnDiv.UseVisualStyleBackColor = true;
             // 
             // radbtnMul
@@ -262,7 +262,7 @@
             this.radbtnMul.Size = new System.Drawing.Size(37, 17);
             this.radbtnMul.TabIndex = 2;
             this.radbtnMul.TabStop = true;
-            this.radbtnMul.Text = "乘";
+            this.radbtnMul.Text = "multiply";// 乘";
             this.radbtnMul.UseVisualStyleBackColor = true;
             // 
             // radbtnMinus
@@ -273,7 +273,7 @@
             this.radbtnMinus.Size = new System.Drawing.Size(37, 17);
             this.radbtnMinus.TabIndex = 1;
             this.radbtnMinus.TabStop = true;
-            this.radbtnMinus.Text = "减";
+            this.radbtnMinus.Text = "subtract";// 减";
             this.radbtnMinus.UseVisualStyleBackColor = true;
             // 
             // radbtnAdd
@@ -284,7 +284,7 @@
             this.radbtnAdd.Size = new System.Drawing.Size(37, 17);
             this.radbtnAdd.TabIndex = 0;
             this.radbtnAdd.TabStop = true;
-            this.radbtnAdd.Text = "加";
+            this.radbtnAdd.Text = "add"; //"加";
             this.radbtnAdd.UseVisualStyleBackColor = true;
             this.radbtnAdd.Click += new System.EventHandler(this.radbtnAdd_Click);
             // 
@@ -294,7 +294,7 @@
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(75, 23);
             this.btnConfirm.TabIndex = 13;
-            this.btnConfirm.Text = "确定";
+            this.btnConfirm.Text = "confirm";// 确定";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
@@ -414,7 +414,7 @@
             this.btnKeyReset.Name = "btnKeyReset";
             this.btnKeyReset.Size = new System.Drawing.Size(92, 23);
             this.btnKeyReset.TabIndex = 25;
-            this.btnKeyReset.Text = "数字输入重置";
+            this.btnKeyReset.Text = "input reset";// "数字输入重置";
             this.btnKeyReset.UseVisualStyleBackColor = true;
             this.btnKeyReset.Click += new System.EventHandler(this.btnKeyReset_Click);
             // 
@@ -425,7 +425,7 @@
             this.lblSecShow.Name = "lblSecShow";
             this.lblSecShow.Size = new System.Drawing.Size(55, 13);
             this.lblSecShow.TabIndex = 26;
-            this.lblSecShow.Text = "剩余 0 秒";
+            this.lblSecShow.Text = "remain";// "剩余 0 秒";
             this.lblSecShow.Visible = false;
             this.lblSecShow.Click += new System.EventHandler(this.lblSecShow_Click);
             // 
@@ -466,7 +466,7 @@
             this.Controls.Add(this.chkDispNext);
             this.Controls.Add(this.grpNumRange);
             this.Name = "Form1";
-            this.Text = "算术练习";
+            this.Text = "basic math";// "算术练习";
             this.grpNumRange.ResumeLayout(false);
             this.grpNumRange.PerformLayout();
             this.grpOpmode.ResumeLayout(false);

@@ -455,7 +455,8 @@ private void btnFast_Click(object sender, EventArgs e)
                 sec--;
             }
 
-            lblSecShow.Text = "剩余" + sec.ToString() + "秒";
+            //lblSecShow.Text = "剩余" + sec.ToString() + "秒";
+            lblSecShow.Text = "remain " + sec.ToString() + " sec";
         }
 
         private void chkDispNext_CheckedChanged(object sender, EventArgs e)

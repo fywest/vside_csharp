@@ -21,9 +21,9 @@ namespace reciteWord1
             InitializeComponent();
 
             library.ReadFile();
-            lblAmount.Text = "累计学习单词 ";
-            lblDuration.Text = "累计学习时间 ";
-            lblCorrect.Text = "已经记忆单词 ";
+            lblAmount.Text = "total learn words  ";
+            lblDuration.Text = "total learn time";
+            lblCorrect.Text = "remember words ";
         }
 
         private void btnLearn_Click(object sender, EventArgs e)
@@ -43,9 +43,13 @@ namespace reciteWord1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblAmount.Text = "累计学习单词 "+Form3.amount.ToString()+" 个";
-            lblDuration.Text = "累计学习时间 "+Form3.duration.ToString()+" 秒";
-            lblCorrect.Text = "已经记忆单词 " + Form4.remember.ToString() + " 个";
+            lblAmount.Text = "total learn " + Form3.amount.ToString()+ " words";
+            lblDuration.Text = "total learn " + Form3.duration.ToString()+" seconds";
+            lblCorrect.Text = "remember " + Form4.remember.ToString() + " words";
+
+         //   lblAmount.Text = "累计学习单词 " + Form3.amount.ToString() + " 个";
+         //   lblDuration.Text = "累计学习时间 " + Form3.duration.ToString() + " 秒";
+         //   lblCorrect.Text = "已经记忆单词 " + Form4.remember.ToString() + " 个";
         }
 
         private void btnTest_Click(object sender, EventArgs e)

@@ -65,7 +65,7 @@
             this.btnLearn.Name = "btnLearn";
             this.btnLearn.Size = new System.Drawing.Size(76, 37);
             this.btnLearn.TabIndex = 2;
-            this.btnLearn.Text = "学习";
+            this.btnLearn.Text = "learn";
             this.btnLearn.UseVisualStyleBackColor = true;
             this.btnLearn.Click += new System.EventHandler(this.btnLearn_Click);
             // 
@@ -74,9 +74,9 @@
             this.btnBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowse.Location = new System.Drawing.Point(277, 203);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(76, 37);
+            this.btnBrowse.Size = new System.Drawing.Size(94, 37);
             this.btnBrowse.TabIndex = 3;
-            this.btnBrowse.Text = "浏览";
+            this.btnBrowse.Text = "browse";
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
@@ -93,7 +93,7 @@
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(76, 37);
             this.btnTest.TabIndex = 4;
-            this.btnTest.Text = "测试";
+            this.btnTest.Text = "test";
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 

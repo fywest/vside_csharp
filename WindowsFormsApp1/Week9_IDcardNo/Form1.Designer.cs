@@ -41,7 +41,7 @@
             this.lblidcard.Name = "lblidcard";
             this.lblidcard.Size = new System.Drawing.Size(103, 13);
             this.lblidcard.TabIndex = 0;
-            this.lblidcard.Text = "请输入身份证号码";
+            this.lblidcard.Text = "please input ID (请输入身份证号码)";
             // 
             // txtidcard
             // 
@@ -57,7 +57,7 @@
             this.btnidcard.Name = "btnidcard";
             this.btnidcard.Size = new System.Drawing.Size(90, 23);
             this.btnidcard.TabIndex = 2;
-            this.btnidcard.Text = "检查有效性";
+            this.btnidcard.Text = "verify validation";// "检查有效性";
             this.btnidcard.UseVisualStyleBackColor = true;
             this.btnidcard.Click += new System.EventHandler(this.btnidcard_Click);
             // 
@@ -68,7 +68,7 @@
             this.lblidcardInfo.Name = "lblidcardInfo";
             this.lblidcardInfo.Size = new System.Drawing.Size(55, 13);
             this.lblidcardInfo.TabIndex = 3;
-            this.lblidcardInfo.Text = "检查结果";
+            this.lblidcardInfo.Text = "result";// "检查结果";
             // 
             // Form1
             // 

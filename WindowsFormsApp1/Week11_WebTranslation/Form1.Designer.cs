@@ -60,7 +60,7 @@
             this.btnTranslate.Name = "btnTranslate";
             this.btnTranslate.Size = new System.Drawing.Size(106, 23);
             this.btnTranslate.TabIndex = 2;
-            this.btnTranslate.Text = "翻译";
+            this.btnTranslate.Text = "translate";// "翻译";
             this.btnTranslate.UseVisualStyleBackColor = true;
             this.btnTranslate.Click += new System.EventHandler(this.btnTranslate_Click);
             // 
@@ -70,7 +70,7 @@
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(96, 23);
             this.btnClear.TabIndex = 3;
-            this.btnClear.Text = "清空";
+            this.btnClear.Text = "empty";// "清空";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -81,7 +81,7 @@
             this.lblInput.Name = "lblInput";
             this.lblInput.Size = new System.Drawing.Size(55, 13);
             this.lblInput.TabIndex = 4;
-            this.lblInput.Text = "输入中文";
+            this.lblInput.Text = "input chinese";// "输入中文";
             // 
             // rtxTo2
             // 
@@ -98,7 +98,7 @@
             this.lblOutput.Name = "lblOutput";
             this.lblOutput.Size = new System.Drawing.Size(55, 13);
             this.lblOutput.TabIndex = 6;
-            this.lblOutput.Text = "输出英文";
+            this.lblOutput.Text = "output english";// "输出英文";
             // 
             // lblOutput2
             // 
@@ -107,7 +107,7 @@
             this.lblOutput2.Name = "lblOutput2";
             this.lblOutput2.Size = new System.Drawing.Size(55, 13);
             this.lblOutput2.TabIndex = 7;
-            this.lblOutput2.Text = "输出繁体";
+            this.lblOutput2.Text = "output traditional chinese";// "输出繁体";
             // 
             // Form1
             // 
