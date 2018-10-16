@@ -15,6 +15,16 @@ namespace smartrac_sw
         public Form1()
         {
             InitializeComponent();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button1.Text = "read reader info";
+            HF_Reader hf_reader1=new HF_Reader("Smartrac","NTAG213",12.5);
+            MessageBox.Show(hf_reader1.WriteBlock());
+
+            
         }
     }
 }
