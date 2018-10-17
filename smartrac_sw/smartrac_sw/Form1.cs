@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace smartrac_sw
 {
     public partial class Form1 : Form
@@ -21,10 +22,16 @@ namespace smartrac_sw
         private void button1_Click(object sender, EventArgs e)
         {
             button1.Text = "read reader info";
-            HF_Reader hf_reader1=new HF_Reader("Smartrac","NTAG213",12.5);
-            MessageBox.Show(hf_reader1.WriteBlock());
+            string msg;
+            //HF_Reader hf_reader1=new HF_Reader("Smartrac","NTAG213",12.5);
+            HF_FEIG hf_feig1 = new HF_FEIG("Smartrac", "NTAG213", 12.5);
+            //MessageBox.Show(hf_feig1.WriteBlock());
 
-            
+            msg = hf_feig1.SelectCommand();
+
+            MessageBox.Show(msg);
+
+
         }
     }
 }
