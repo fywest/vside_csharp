@@ -27,7 +27,7 @@ namespace smartrac_sw
 
                 
                 string line;
-                char[] delimiterChars = { '\t' };//{ ' ', ',', '.', ':', '\t' };
+                char[] delimiterChars = { '\t' };
                 string[] manufacture = new string[15];
                 string[] type = new string[15];
                 string[] commands = new string[15];
@@ -51,14 +51,7 @@ namespace smartrac_sw
                 }
 
             }
-            //for(int i=0;i<test_commands.Count;i++)
-            //{
-            //    int index = i + 1;
-            //    string command = test_commands[i].Commands;
 
-            //    msg += index +"\t"+ command+"\n";
-            //}
-            //throw new System.NotImplementedException();
         }
 
         public void SelectCommand()
