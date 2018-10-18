@@ -16,10 +16,12 @@ namespace smartrac_sw
         public string SelectCommand()
         {
             string msg = "";
+            List<Test_Command> test_commands = new List<Test_Command>();
 
             using (var sr = new StreamReader("SWT_HF_TEST_COMMANDS.cfg"))
             {
 
+                
                 string line;
                 char[] delimiterChars = { '\t' };//{ ' ', ',', '.', ':', '\t' };
                 string[] manufacture = new string[15];
@@ -34,6 +36,8 @@ namespace smartrac_sw
                     manufacture[index] = words[0];
                     type[index] = words[1];
                     commands[index] = words[4];
+
+                    test_commands.Add(new Test_Command(words[0], words[1], words[4]));
 
 
                     //msg += line+"\n";
