@@ -16,5 +16,39 @@ namespace smartrac_sw
             _commands = commands;
             //throw new System.NotImplementedException();
         }
+        public string Manufacture
+        {
+            get
+            {
+                return _manufacture;
+            }
+            set
+            {
+                _manufacture = value;
+            }
+        }
+        public string Type
+        {
+            get
+            {
+                return _type;
+            }
+            set
+            {
+                _type = value;
+            }
+        }
+        public string Commands
+        {
+            get
+            {
+                return _commands;
+            }
+            set
+            {
+                _commands = value;
+            }
+        }
+
     }
 }

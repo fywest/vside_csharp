@@ -4,21 +4,25 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
+
 namespace smartrac_sw
 {
     public class HF_FEIG:HF_Reader
     {
+        public List<Test_Command> test_commands = new List<Test_Command>();
         public HF_FEIG(string manufacturer, string model, double txPower) : base(manufacturer, model, txPower)
         {
 
         }
 
-        public string SelectCommand()
+        public void ReadCFGFile(string filename)
         {
-            string msg = "";
-            List<Test_Command> test_commands = new List<Test_Command>();
+            //string msg = "";
+            
 
-            using (var sr = new StreamReader("SWT_HF_TEST_COMMANDS.cfg"))
+
+
+            using (var sr = new StreamReader(filename))
             {
 
                 
@@ -41,13 +45,25 @@ namespace smartrac_sw
 
 
                     //msg += line+"\n";
-                    msg += manufacture[index] + "\t" + type[index] + "\t" + commands[index] + "\n";
+                    //msg += manufacture[index] + "\t" + type[index] + "\t" + commands[index] + "\n";
 
                     index++;
                 }
 
             }
-            return msg;
+            //for(int i=0;i<test_commands.Count;i++)
+            //{
+            //    int index = i + 1;
+            //    string command = test_commands[i].Commands;
+
+            //    msg += index +"\t"+ command+"\n";
+            //}
+            //throw new System.NotImplementedException();
+        }
+
+        public void SelectCommand()
+        {
+
             //throw new System.NotImplementedException();
         }
     }
