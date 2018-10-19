@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp2
+namespace CSharp
 {
-    class Program
+    class CSharp
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine("test here");
-            Console.ReadLine();
+            Console.WriteLine("hello CSharp");
+            FreeCodeCsharp sample1=new FreeCodeCsharp();
+            sample1.Sample();
         }
     }
 }
