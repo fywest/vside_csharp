@@ -53,12 +53,18 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="HF_FEIG.cs" />
+    <Compile Include="HF_IC.cs" />
     <Compile Include="HF_Reader.cs" />
+    <Compile Include="IC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reader.cs" />
     <Compile Include="Test_Command.cs" />
+    <Compile Include="ThingMagic.cs" />
+    <Compile Include="UHF_IC.cs" />
     <Compile Include="UHF_Reader.cs" />
+    <Compile Include="UHF_Thinkify.cs" />
+    <Compile Include="UHF_Voyantic.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
