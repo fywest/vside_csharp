@@ -9,10 +9,10 @@ namespace smartrac_sw
 {
     public class HF_FEIG:HF_Reader
     {
-        public List<Test_Command> test_commands = new List<Test_Command>();
+        public List<Test_Command> test_commands;//= new List<Test_Command>();
         public HF_FEIG(string manufacturer, string model, double txPower) : base(manufacturer, model, txPower)
         {
-
+            this.test_commands = new List<Test_Command>();
         }
 
         public void ReadCFGFile(string filename)
