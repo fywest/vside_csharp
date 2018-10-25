@@ -16,5 +16,11 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void label1_MouseClick(object sender, MouseEventArgs e)
+        {
+            Label senderLabel = (Label)sender;
+            senderLabel.Text = e.Button.ToString();
+        }
     }
 }

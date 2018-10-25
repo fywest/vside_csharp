@@ -41,6 +41,7 @@
             this.label1.Size = new System.Drawing.Size(118, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Smartrac";
+            this.label1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label1_MouseClick);
             // 
             // Form1
             // 
