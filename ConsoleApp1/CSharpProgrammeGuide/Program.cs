@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
+
 namespace CSharpProgrammeGuide
 {
     public delegate void Del(string message);
@@ -26,7 +29,20 @@ namespace CSharpProgrammeGuide
 
         }
 
-        static void commandLine(string[] args)
+        public static long Factorial(int n)
+        {
+            if((n<0)||(n>20))
+            {
+                return -1;
+            }
+            long tempResult = 1;
+            for(int i=1;i<=n;i++)
+            {
+                tempResult *= i;
+            }
+            return tempResult;
+        }
+        static int commandLine(string[] args)
         {
             // The Length property provides the number of array elements
             System.Console.WriteLine("parameter count = {0}", args.Length);
@@ -40,6 +56,34 @@ namespace CSharpProgrammeGuide
             {
                 System.Console.WriteLine(s);
             }
+
+            if(args.Length==0)
+            {
+                Console.WriteLine("Please enter a numeric argument");
+                Console.WriteLine("Usage:Factorial <num>");
+                return 1;
+            }
+
+            int num;
+            bool test = int.TryParse(args[0], out num);
+            if(test==false)
+            {
+                Console.WriteLine("Please enter a numeric argument");
+                Console.WriteLine("Usage:Factorial <num>");
+            }
+
+            long result = Factorial(num);
+
+            if(result==-1)
+            {
+                Console.WriteLine("Input must be >=0 and <=20");
+                
+            }
+            else
+            {
+                Console.WriteLine("The Factorial of {0} is {1}.", num, result);
+            }
+            return 0;
         }
 
         static void array_queryExpression()
@@ -203,6 +247,67 @@ namespace CSharpProgrammeGuide
                 }
             }
         }
+
+        static void conceptAssembly()
+        {
+            //// Access an internal type.  
+            //Class1 inst1 = new Class1();
+            //inst1.Test();
+
+            //Class2 inst2 = new Class2();
+            //// Access an internal member of a public type.  
+            //inst2.Test();
+
+            //System.Console.ReadLine();
+        }
+
+        static void CreateWorkbook(int[] values, string filePath)
+        {
+           
+            Excel.Application excelApp = null;
+            Excel.Workbook wkbk;
+            Excel.Worksheet sheet;
+
+            try
+            {
+                // Start Excel and create a workbook and worksheet.  
+                excelApp = new Excel.Application();
+                wkbk = excelApp.Workbooks.Add();
+                sheet = wkbk.Sheets.Add() as Excel.Worksheet;
+                sheet.Name = "Sample Worksheet";
+
+                // Write a column of values.  
+                // In the For loop, both the row index and array index start at 1.  
+                // Therefore the value of 4 at array index 0 is not included.  
+                for (int i = 1; i < values.Length; i++)
+                {
+                    sheet.Cells[i, 1] = values[i];
+                }
+
+                // Suppress any alerts and save the file. Create the directory   
+                // if it does not exist. Overwrite the file if it exists.  
+                excelApp.DisplayAlerts = false;
+                string folderPath = Path.GetDirectoryName(filePath);
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+                wkbk.SaveAs(filePath);
+            }
+            catch
+            {
+            }
+            finally
+            {
+                sheet = null;
+                wkbk = null;
+
+                // Close Excel.  
+                excelApp.Quit();
+                excelApp = null;
+            }
+        }
+
         static void Main(string[] args)
         {
 
@@ -222,6 +327,11 @@ namespace CSharpProgrammeGuide
             //array_foreach();
             //array_parameter();
             //array_parameter2D(new int[,] { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } });
+            //conceptAssembly()//reference friend unsigned_B project
+
+
+            int[] values = { 4, 6, 18, 2, 1, 76, 0, 3, 11 };
+            CreateWorkbook(values, @"C:\SampleFolder\SampleWorkbook.xls");
 
             //keep the consolte window ofpen in debug mode.
             Console.WriteLine("\nPress any key to exit");
