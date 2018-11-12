@@ -11,6 +11,18 @@ namespace CSharpProgrammeGuide
 {
     public delegate void Del(string message);
 
+    public class Galaxy
+    {
+        public string Name { get; set; }
+        public int MegaLightYears { get; set; }
+    }
+
+    public class Element
+    {
+        public string Symbol { get; set; }
+        public string Name { get; set; }
+        public int AtomicNumber { get; set; }
+    }
 
     class Hello
     {
@@ -308,6 +320,162 @@ namespace CSharpProgrammeGuide
             }
         }
 
+        static void collection_test()
+        {
+            var salmons = new List<string>();//{"chinook","coho","pink","sockeye"}
+            salmons.Add("chinook");
+            salmons.Add("coho");
+            salmons.Add("pink");
+            salmons.Add("sockeye");
+
+            salmons.Remove("coho");//remove
+
+            foreach(var salmon in salmons)
+            {
+                Console.WriteLine(salmon + " ");
+            }
+
+            var salmons_upper = new List<string> { "chinook", "coho", "pink", "sockeye" };
+
+            salmons_upper.RemoveAt(1);//remove coho
+
+            for(var index=0;index<salmons_upper.Count;index++)
+            {
+                Console.Write(salmons_upper[index].ToUpper() + " ");
+            }
+            Console.WriteLine();
+            var theGalaxys = new List<Galaxy>
+            {
+               new Galaxy(){ Name = "Tadpole", MegaLightYears = 400 },
+               new Galaxy(){ Name="Pinwheel",MegaLightYears=25},
+               new Galaxy(){Name="Milky Way",MegaLightYears=0},
+               new Galaxy(){Name="Andromeda",MegaLightYears=3}
+            };
+            foreach(Galaxy theGalaxy in theGalaxys)
+            {
+                Console.WriteLine(theGalaxy.Name + " " + theGalaxy.MegaLightYears);
+            }
+
+            Console.WriteLine("***dictionary");
+
+            IterateThruDictionary();
+            FindInDictionary("Ti");
+
+            void IterateThruDictionary()
+            {
+                Dictionary<string, Element> elements = BuildDictionary();
+
+                foreach (KeyValuePair<string, Element> kvp in elements)
+                {
+                    Element theElement = kvp.Value;
+
+                    Console.WriteLine("key: " + kvp.Key);
+                    Console.WriteLine("values: " + theElement.Symbol + " " +
+                        theElement.Name + " " + theElement.AtomicNumber);
+                }
+            }
+
+            Dictionary<string, Element> BuildDictionary()
+            {
+                var elements = new Dictionary<string, Element>();
+
+                AddToDictionary(elements, "K", "Potassium", 19);
+                AddToDictionary(elements, "Ca", "Calcium", 20);
+                AddToDictionary(elements, "Sc", "Scandium", 21);
+                AddToDictionary(elements, "Ti", "Titanium", 22);
+
+                return elements;
+            }
+
+            void AddToDictionary(Dictionary<string, Element> elements,
+                string symbol, string name, int atomicNumber)
+            {
+                Element theElement = new Element();
+
+                theElement.Symbol = symbol;
+                theElement.Name = name;
+                theElement.AtomicNumber = atomicNumber;
+
+                elements.Add(key: theElement.Symbol, value: theElement);
+            }
+
+            void FindInDictionary(string symbol)
+            {
+                Dictionary<string, Element> elements = BuildDictionary();
+
+                if (elements.ContainsKey(symbol) == false)
+                {
+                    Console.WriteLine(symbol + " not found");
+                }
+                else
+                {
+                    Element theElement = elements[symbol];
+                    Console.WriteLine("found: " + theElement.Name);
+                }
+            }
+
+            Console.WriteLine("***dictionary2");
+            IterateThruDictionary2();
+            FindInDictionary2("Ti");
+
+            void IterateThruDictionary2()
+            {
+                Dictionary<string, Element> elements = BuildDictionary2();
+
+                foreach (KeyValuePair<string, Element> kvp in elements)
+                {
+                    Element theElement = kvp.Value;
+
+                    Console.WriteLine("key: " + kvp.Key);
+                    Console.WriteLine("values: " + theElement.Symbol + " " +
+                        theElement.Name + " " + theElement.AtomicNumber);
+                }
+
+                //var subset = from theElement in elements
+                //             where theElement.AtomicNumber < 22
+                //             orderby theElement.Name
+                //             select theElement;
+
+                //foreach (Element theElement in subset)
+                //{
+                //    Console.WriteLine(theElement.Name + " " + theElement.AtomicNumber);
+                //}
+
+
+            }
+
+            Dictionary<string, Element> BuildDictionary2()
+            {
+                return new Dictionary<string, Element>
+                    {
+                        {"K",
+                            new Element() { Symbol="K", Name="Potassium", AtomicNumber=19}},
+                        {"Ca",
+                            new Element() { Symbol="Ca", Name="Calcium", AtomicNumber=20}},
+                        {"Sc",
+                            new Element() { Symbol="Sc", Name="Scandium", AtomicNumber=21}},
+                        {"Ti",
+                            new Element() { Symbol="Ti", Name="Titanium", AtomicNumber=22}}
+                    };
+            }
+
+            void FindInDictionary2(string symbol)
+            {
+                Dictionary<string, Element> elements = BuildDictionary2();
+
+                Element theElement = null;
+                if (elements.TryGetValue(symbol, out theElement) == false)
+                    Console.WriteLine(symbol + " not found");
+                else
+                    Console.WriteLine("found: " + theElement.Name);
+            }
+
+
+
+        }
+
+
+
         static void Main(string[] args)
         {
 
@@ -330,8 +498,11 @@ namespace CSharpProgrammeGuide
             //conceptAssembly()//reference friend unsigned_B project
 
 
-            int[] values = { 4, 6, 18, 2, 1, 76, 0, 3, 11 };
-            CreateWorkbook(values, @"C:\SampleFolder\SampleWorkbook.xls");
+            //int[] values = { 4, 6, 18, 2, 1, 76, 0, 3, 11 };
+            //CreateWorkbook(values, @"C:\SampleFolder\SampleWorkbook.xls");
+
+            collection_test();
+
 
             //keep the consolte window ofpen in debug mode.
             Console.WriteLine("\nPress any key to exit");
