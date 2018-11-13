@@ -24,6 +24,16 @@ namespace CSharpProgrammeGuide
         public int AtomicNumber { get; set; }
     }
 
+    class ExampleClass
+    {
+        public ExampleClass() { }
+        public ExampleClass(int v) { }
+
+        public void exampleMethod1(int i) { }
+
+        public void exampleMethod2(string str) { }
+    }
+
     class Hello
     {
         public static void DelMethod(string str)
@@ -474,8 +484,399 @@ namespace CSharpProgrammeGuide
 
         }
 
+        static void types_test()
+        {
+           
+
+            byte num = 0xA;
+            int byte_max = Byte.MaxValue;//FF
+            int byte_szie=sizeof(byte);
+            Type type_byte = num.GetType();
 
 
+            char c = 'Z';
+            int char_max = char.MaxValue;
+            int char_szie = sizeof(char);
+            Type type_char = c.GetType();
+
+            short j = 5;
+            int short_max = short.MaxValue;
+            int short_size = sizeof(short);
+            Type type_short = j.GetType();
+
+            int i = 5;
+            int int_max = int.MaxValue;
+            int int_size = sizeof(int);
+            Type type_int = i.GetType();
+
+
+        }
+
+        static void box_test()
+        {
+            int i = 123;
+            object o = i;
+            i = 456;
+            
+
+            try
+            {
+                //int j = (short)o;//invalid
+                int j = (int)o;
+                System.Console.WriteLine("unboxing ok");
+            }
+            catch(System.InvalidCastException e)
+            {
+                System.Console.WriteLine("{0} Error: Incorrect unboxing", e.Message);
+            }
+        }
+
+        //static void dynamic_test()
+        //{
+        //    ExampleClass ec = new ExampleClass();
+        //    dynamic dynamic_ec = new ExampleClass();
+
+        //    dynamic_ec.exampleMethod1( 10, 4);
+        //    dynamic_ec.someMethod("some argument", 7, null);
+        //    dynamic_ec.nonexistentMethod();
+        //}
+
+        
+        static void bitConvert_arrayInt()
+        {
+            byte[] bytes = { 0, 0, 0, 25 };
+            //if the system architecture is little-endian(that is ,little end first),
+            // reverse the byte array
+            if (BitConverter.IsLittleEndian)
+                Array.Reverse(bytes);
+            int i = BitConverter.ToInt32(bytes, 0);
+            Console.WriteLine("int: {0}", i);
+
+            byte[] bytes1 = BitConverter.GetBytes(201805978);
+            Console.WriteLine("byte array: " + BitConverter.ToString(bytes1));
+        }
+
+        static void bitConver_test()
+        {
+            Console.WriteLine(
+                "This example of the BitConverter.IsLittleEndian field " +
+                "generates \nthe following output when run on " +
+                "x86-class computers.\n");
+            Console.WriteLine("IsLittleEndian:  {0}",
+                BitConverter.IsLittleEndian);
+
+            const string formatter = "{0,25}{1,30}";
+
+            double aDoubl = 0.1111111111111111111;
+            float aSingl = 0.1111111111111111111F;
+            long aLong = 1111111111111111111;
+            int anInt = 1111111111;
+            short aShort = 11111;
+            char aChar = '*';
+            bool aBool = true;
+
+            Console.WriteLine(
+                "This example of methods of the BitConverter class" +
+                "\ngenerates the following output.\n");
+            Console.WriteLine(formatter, "argument", "byte array");
+            Console.WriteLine(formatter, "--------", "----------");
+
+            // Convert values to Byte arrays and display them.
+            Console.WriteLine(formatter, aDoubl,
+                BitConverter.ToString(BitConverter.GetBytes(aDoubl)));
+            Console.WriteLine(formatter, aSingl,
+                BitConverter.ToString(BitConverter.GetBytes(aSingl)));
+            Console.WriteLine(formatter, aLong,
+                BitConverter.ToString(BitConverter.GetBytes(aLong)));
+            Console.WriteLine(formatter, anInt,
+                BitConverter.ToString(BitConverter.GetBytes(anInt)));
+            Console.WriteLine(formatter, aShort,
+                BitConverter.ToString(BitConverter.GetBytes(aShort)));
+            Console.WriteLine(formatter, aChar,
+                BitConverter.ToString(BitConverter.GetBytes(aChar)));
+            Console.WriteLine(formatter, aBool,
+                BitConverter.ToString(BitConverter.GetBytes(aBool)));
+
+        }
+
+        static void bitconvet_GetbytesChar()
+        {
+            const string formatter = "{0,10}{1,16}";
+
+            Console.WriteLine(
+            "This example of the BitConverter.GetBytes( char ) " +
+            "\nmethod generates the following output.\r\n");
+            Console.WriteLine(formatter, "char", "byte array");
+            Console.WriteLine(formatter, "----", "----------");
+
+            // Convert char values and display the results.
+            GetBytesChar('\0');
+            GetBytesChar(' ');
+            GetBytesChar('*');
+            GetBytesChar('3');
+            GetBytesChar('A');
+            GetBytesChar('[');
+            GetBytesChar('a');
+            GetBytesChar('{');
+
+            void GetBytesChar(char argument)
+            {
+                byte[] byteArray = BitConverter.GetBytes(argument);
+                Console.WriteLine(formatter, argument,
+                    BitConverter.ToString(byteArray));
+            }
+
+        }
+
+        static void bitConvert_GetBytes_int16()
+        {
+
+            const string formatter = "{0,10}{1,13}";
+
+            Console.WriteLine(
+            "This example of the BitConverter.GetBytes( short ) " +
+            "\nmethod generates the following output.\n");
+            Console.WriteLine(formatter, "short", "byte array");
+            Console.WriteLine(formatter, "-----", "----------");
+
+            // Convert short values and display the results.
+            GetBytesInt16(0);
+            GetBytesInt16(15);
+            GetBytesInt16(-15);
+            GetBytesInt16(10000);
+            GetBytesInt16(-10000);
+            GetBytesInt16(short.MinValue);
+            GetBytesInt16(short.MaxValue);
+
+            // Convert a short argument to a byte array and display it.
+            void GetBytesInt16(short argument)
+            {
+                byte[] byteArray = BitConverter.GetBytes(argument);
+                Console.WriteLine(formatter, argument,
+                    BitConverter.ToString(byteArray));
+            }
+        }
+
+        static void bitConvert_GetBytes_int32()
+        {
+            // Define an array of integers.
+            int[] values = { 0, 15, -15, 0x100000,  -0x100000, 1000000000,
+                         -1000000000, int.MinValue, int.MaxValue };
+
+            // Convert each integer to a byte array.
+            Console.WriteLine("{0,16}{1,10}{2,17}", "Integer",
+                              "Endian", "Byte Array");
+            Console.WriteLine("{0,16}{1,10}{2,17}", "---", "------",
+                              "----------");
+            foreach (var value in values)
+            {
+                byte[] byteArray = BitConverter.GetBytes(value);
+                Console.WriteLine("{0,16}{1,10}{2,17}", value,
+                                  BitConverter.IsLittleEndian ? "Little" : " Big",
+                                  BitConverter.ToString(byteArray));
+            }
+        }
+
+        static void BitConvert_ByteToChar()
+        {
+            string formatter = "{0,5}{1,17}{2,8}";
+
+            byte[] byteArray = {
+             32,   0,   0,  42,   0,  65,   0, 125,   0,
+            197,   0, 168,   3,  41,   4, 172,  32 };
+
+            Console.WriteLine(
+                "This example of the BitConverter.ToChar( byte[ ], " +
+                "int ) \nmethod generates the following output. It " +
+                "converts \nelements of a byte array to char values.\n");
+            Console.WriteLine("initial byte array");
+            Console.WriteLine("------------------");
+            Console.WriteLine(BitConverter.ToString(byteArray));
+
+            for(int i=0;i<byteArray.Length;i=i+1)
+                Console.Write("{0} ",byteArray[i]);
+
+            Console.WriteLine();
+            for (int i = 0; i < byteArray.Length; i++)
+                Console.Write("|{0} ", (char)byteArray[i]);
+
+            Console.WriteLine();
+            Console.WriteLine(formatter, "index", "array elements", "char");
+            Console.WriteLine(formatter, "-----", "--------------", "----");
+
+            // Convert byte array elements to char values.
+            BAToChar(byteArray, 0);
+            BAToChar(byteArray, 1);
+            BAToChar(byteArray, 3);
+            BAToChar(byteArray, 5);
+            BAToChar(byteArray, 7);
+            BAToChar(byteArray, 9);
+            BAToChar(byteArray, 11);
+            BAToChar(byteArray, 13);
+            BAToChar(byteArray, 15);
+
+            void BAToChar(byte[] bytes, int index)
+            {
+                char value = BitConverter.ToChar(bytes, index);
+
+
+                Console.WriteLine(formatter, index,
+                    BitConverter.ToString(bytes, index, 2), value);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine(formatter, "index", "array elements", "int16");
+            Console.WriteLine(formatter, "-----", "--------------", "----");
+
+            BAToInt16(byteArray, 0);
+            BAToInt16(byteArray, 1);
+            BAToInt16(byteArray, 3);
+            BAToInt16(byteArray, 5);
+            BAToInt16(byteArray, 7);
+            BAToInt16(byteArray, 9);
+            BAToInt16(byteArray, 11);
+            BAToInt16(byteArray, 13);
+            BAToInt16(byteArray, 15);
+            void BAToInt16(byte[] bytes,int index)
+            {
+                int value = BitConverter.ToInt16(bytes, index);
+                Console.WriteLine(formatter, index,
+                    BitConverter.ToString(bytes, index, 2), value.ToString());
+            }
+
+            formatter = "{0,5}{1,17}{2,18}";
+            Console.WriteLine();
+            Console.WriteLine(formatter, "index", "array elements", "int32");
+            Console.WriteLine(formatter, "-----", "--------------", "----");
+
+            BAToInt32(byteArray, 0);
+            BAToInt32(byteArray, 3);
+            BAToInt32(byteArray, 7);
+            BAToInt32(byteArray, 11);
+            
+
+            void BAToInt32(byte[] bytes, int index)
+            {
+                int value = BitConverter.ToInt32(bytes, index);
+                Console.WriteLine(formatter, index,
+                    BitConverter.ToString(bytes, index, 4), value.ToString());
+            }
+        }
+
+        static void tryParse_test()
+        {
+            string numString = "1287543"; //"1287543.0" will return false for a long
+            long number1 = 0;
+            bool canConvert = long.TryParse(numString, out number1);
+            if (canConvert == true)
+                Console.WriteLine("number1 now = {0}", number1);
+            else
+                Console.WriteLine("numString is not a valid long");
+
+            byte number2 = 0;
+            numString = "255"; // A value of 256 will return false
+            canConvert = byte.TryParse(numString, out number2);
+            if (canConvert == true)
+                Console.WriteLine("number2 now = {0}", number2);
+            else
+                Console.WriteLine("numString is not a valid byte");
+
+            decimal number3 = 0;
+            numString = "27.3"; //"27" is also a valid decimal
+            canConvert = decimal.TryParse(numString, out number3);
+            if (canConvert == true)
+                Console.WriteLine("number3 now = {0}", number3);
+            else
+                Console.WriteLine("number3 is not a valid decimal");
+        }
+
+        static void tryParse_strToNum()
+        {
+            // This snippet shows a couple of examples that extract number characters from the
+            // beginning of the string to avoid TryParse errors.
+            StringBuilder sb = new StringBuilder();
+            var str = "  10FFxxx";
+            foreach (char c in str)
+            {
+                // Check for numeric characters (hex in this case).  Add "." and "e" if float,
+                // and remove letters.  Include initial space because it is harmless.
+                if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'F') || (c >= 'a' && c <= 'f') || c == ' ')
+                {
+                    sb.Append(c);
+                }
+                else
+                    break;
+            }
+            if (int.TryParse(sb.ToString(), System.Globalization.NumberStyles.HexNumber, null, out int i))
+                Console.WriteLine(sb.ToString());
+            Console.WriteLine("i= {0}", i);
+
+            str = "   -10FFXXX";
+            sb.Clear();
+            foreach (char c in str)
+            {
+                // Check for numeric characters (allow negative in this case but no hex digits). 
+                // Though we use int.TryParse in the previous example and this one, int.TryParse does NOT
+                // allow a sign character (-) AND hex digits at the same time.
+                // Include initial space because it is harmless.
+                if ((c >= '0' && c <= '9') || c == ' ' || c == '-')
+                {
+                    sb.Append(c);
+                }
+                else
+                    break;
+            }
+            if (int.TryParse(sb.ToString(), out int j))
+                Console.WriteLine(sb.ToString());
+            Console.WriteLine("j= {0}", j);
+        }
+
+        static void convert_HexToStr()
+        {
+            string input = "Hello World!";
+            char[] values = input.ToCharArray();
+            foreach(char letter in values)
+            {
+                int value = Convert.ToInt32(letter);
+                string hexoutput = string.Format("{0:X}", value);
+                Console.WriteLine("Hexadecimal value of {0} is {1}", letter, hexoutput);
+            }
+
+            Console.WriteLine(" hex to integer and char");
+
+            string hexValues = "48 65 6C 6C 6F 20 57 6F 72 6C 64 21";
+            string[] hexValuesSplit = hexValues.Split(' ');
+            foreach(string hex in hexValuesSplit)
+            {
+                int value = Convert.ToInt32(hex,16);
+                string stringValue = char.ConvertFromUtf32(value);
+                char charValue = (char)value;
+                Console.WriteLine("hexadecimal value = {0}, int value = {1}, char value = {2} or {3}",
+                    hex, value, stringValue, charValue);
+
+
+            }
+
+            Console.WriteLine(" hex to decimal");
+            string hexString = "8E2";//2274
+            int num = Int32.Parse(hexString, System.Globalization.NumberStyles.HexNumber);
+            Console.WriteLine($"{hexString} {num}");
+
+            Console.WriteLine(" hex to float");
+            string hexString1 = "43480170";
+            uint num1 = uint.Parse(hexString1, System.Globalization.NumberStyles.AllowHexSpecifier);
+            byte[] floatVals = BitConverter.GetBytes(num1);
+            float f = BitConverter.ToSingle(floatVals, 0);
+            Console.WriteLine("{0} float convert={1}",hexString1, f);
+
+            Console.WriteLine(" byte to hex");
+            byte[] vals = { 0x01, 0xAA, 0XB1, 0XDC, 0X10, 0XDD };
+            string str = BitConverter.ToString(vals);
+            Console.WriteLine(str);
+
+            str = BitConverter.ToString(vals).Replace("-", "");
+            Console.WriteLine(str);
+        }
         static void Main(string[] args)
         {
 
@@ -501,9 +902,26 @@ namespace CSharpProgrammeGuide
             //int[] values = { 4, 6, 18, 2, 1, 76, 0, 3, 11 };
             //CreateWorkbook(values, @"C:\SampleFolder\SampleWorkbook.xls");
 
-            collection_test();
+            //collection_test();
 
+            //types_test();
 
+            //box_test();
+
+            //dynamic_test();
+
+            //bitConvert_arrayInt();
+
+            //bitConver_test();
+            //bitconvet_GetbytesChar();
+            //bitConvert_GetBytes_int16();
+            //bitConvert_GetBytes_int32();
+            //BitConvert_ByteToChar();
+
+            //tryParse_test();//long,decimal,byte,
+            //tryParse_strToNum();//hex , minus
+            //convert_HexToStr();//hex to decimal,float. byte to hex
+            
             //keep the consolte window ofpen in debug mode.
             Console.WriteLine("\nPress any key to exit");
             Console.ReadKey();
