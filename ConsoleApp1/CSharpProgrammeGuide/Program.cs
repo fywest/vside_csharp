@@ -34,6 +34,46 @@ namespace CSharpProgrammeGuide
         public void exampleMethod2(string str) { }
     }
 
+    class Product
+    {
+        public Product(string name, int newID)
+        {
+            ItemName = name;
+            ItemId = newID;
+        }
+
+        public string ItemName { get; set; }
+        public int ItemId { get; set; }
+    }
+
+    [Flags]
+    public enum CarOptions
+    {
+        // The flag for SunRoof is 0001.
+        SunRoof = 0x01,
+        // The flag for Spoiler is 0010.
+        Spoiler = 0x02,
+        // The flag for FogLights is 0100.
+        FogLights = 0x04,
+        // The flag for TintedWindows is 1000.
+        TintedWindows = 0x08,
+    }
+
+    namespace Nested
+    {
+        using static System.Console;
+        using static System.Math;
+        public class NestedNameSpaceClass
+        {
+            public static void SayHello()
+            {
+
+                Console.WriteLine("Hello");
+                WriteLine(Sqrt(3*3 + 4*4));
+
+            }
+        }
+    }
     class Hello
     {
         public static void DelMethod(string str)
@@ -490,26 +530,29 @@ namespace CSharpProgrammeGuide
 
             byte num = 0xA;
             int byte_max = Byte.MaxValue;//FF
-            int byte_szie=sizeof(byte);
-            Type type_byte = num.GetType();
+            int byte_szie=sizeof(byte);//1
+            Type type_byte = num.GetType();//Byte
 
 
             char c = 'Z';
-            int char_max = char.MaxValue;
-            int char_szie = sizeof(char);
-            Type type_char = c.GetType();
+            int char_max = char.MaxValue;//FFFF
+            int char_szie = sizeof(char);//72
+            Type type_char = c.GetType();//Char
 
             short j = 5;
-            int short_max = short.MaxValue;
-            int short_size = sizeof(short);
-            Type type_short = j.GetType();
+            int short_max = short.MaxValue;//32767
+            int short_size = sizeof(short);//2
+            Type type_short = j.GetType();//Int16
 
             int i = 5;
-            int int_max = int.MaxValue;
-            int int_size = sizeof(int);
-            Type type_int = i.GetType();
+            int int_max = int.MaxValue;//217483647
+            int int_size = sizeof(int);//4
+            Type type_int = i.GetType();//Int32
 
-
+            Console.WriteLine($"byte_max:{byte_max} byte_size:{byte_szie}\n" +
+                $"char_max:{char_max} char_size:{char_szie}\n" +
+                $"short_max:{short_max} short_size:{short_size}\n" +
+                $"int_max:{int_max} int_size:{int_size}");
         }
 
         static void box_test()
@@ -877,6 +920,128 @@ namespace CSharpProgrammeGuide
             str = BitConverter.ToString(vals).Replace("-", "");
             Console.WriteLine(str);
         }
+
+        static void types_test1()
+        {
+            //byte
+            byte byteValue1 = 201;
+            Console.WriteLine(byteValue1);
+
+            byte byteValue2 = 0x00C9;
+            Console.WriteLine(byteValue2);
+
+            byte byteValue3 = 0b1100_1001;
+            Console.WriteLine(byteValue3);
+
+            //char
+            char[] chars = new char[4];
+
+            chars[0]= 'X';
+            chars[1] = '\x0058';
+            chars[2] = (char)88;
+            chars[3] = '\u0058';
+
+            foreach(char c in chars)
+            {
+                Console.WriteLine(c + " ");
+            }
+
+            //int,float,short,double
+            int x = 3;
+            float y = 4.5f;
+            short z = 5;
+            double w = 1.7E+3;
+            // Result of the 2nd argument is a double:
+            Console.WriteLine("The sum is {0}", x + y + z + w);
+
+            //enum
+            // The bitwise OR of 0001 and 0100 is 0101.
+            CarOptions options = CarOptions.SunRoof | CarOptions.FogLights;
+
+            // Because the Flags attribute is specified, Console.WriteLine displays
+            // the name of each enum element that corresponds to a flag that has
+            // the value 1 in variable options.
+            Console.WriteLine(options);
+            // The integer value of 0101 is 5.
+            Console.WriteLine((int)options);
+
+            //int
+            int intValue1 = 90_946;
+            Console.WriteLine(intValue1);
+
+            int intValue2 = 0x0001_6342;
+            Console.WriteLine(intValue2);
+
+            int intValue3 = 0b0001_0110_0011_0100_0010;
+            Console.WriteLine(intValue3);
+
+            int intValue4 = 0x_0001_6342;       // C# 7.2 onwards
+            Console.WriteLine(intValue4);
+
+            int intValue5 = 0b_0001_0110_0011_0100_0010;       // C# 7.2 onwards
+            Console.WriteLine(intValue5);
+            // The example displays the following output:
+            //          90946
+            //          90946
+            //          90946
+            //          90946
+            //          90946
+        }
+
+        static void methodParams()
+        {
+            UseParams(1, 2, 3, 4);
+            UseParams2(1, 'a', "test",new int[] {6,5,4,3,2,1 });
+
+            void UseParams(params int[] list)
+            {
+                for(int i=0;i<list.Length;i++)
+                {
+                    Console.WriteLine(list[i] + " ");
+                }
+                Console.WriteLine();
+            }
+            void UseParams2(params object[] list)
+            {
+                for(int i=0;i<list.Length;i++)
+                {
+                    Console.Write(list[i] + " ");
+                    //if (list[i].length)
+                }
+                Console.WriteLine();
+            }
+        }
+
+        static void ModifyProductByReference()
+        {
+            Product item = new Product("Fasteners", 54321);
+            Console.WriteLine("Original values in Main. Name: {0},ID: {1} \n", item.ItemName, item.ItemId);
+
+            ChangeByReference(ref item);
+            Console.WriteLine("Back in Main. Name: {0},ID: {1} \n", item.ItemName, item.ItemId);
+
+            void ChangeByReference(ref Product itemRef)
+            {
+                itemRef = new Product("Stapler", 99999);
+                itemRef.ItemId = 12345;
+            }
+
+            int number = 1;
+            Method(ref number);
+            Console.WriteLine(number);
+            void Method(ref int refArgument)
+            {
+                refArgument = refArgument + 44;
+            }
+        }
+
+        static void namespace_test()
+        {
+            
+            Nested.NestedNameSpaceClass.SayHello();
+        }
+
+
         static void Main(string[] args)
         {
 
@@ -904,7 +1069,7 @@ namespace CSharpProgrammeGuide
 
             //collection_test();
 
-            //types_test();
+            types_test();//sizeof byte,char,int
 
             //box_test();
 
@@ -921,7 +1086,13 @@ namespace CSharpProgrammeGuide
             //tryParse_test();//long,decimal,byte,
             //tryParse_strToNum();//hex , minus
             //convert_HexToStr();//hex to decimal,float. byte to hex
-            
+
+            //types_test1();//byte,char,int,long
+            //methodParams();
+
+            //ModifyProductByReference();
+            //namespace_test();//namespace,using,
+
             //keep the consolte window ofpen in debug mode.
             Console.WriteLine("\nPress any key to exit");
             Console.ReadKey();
