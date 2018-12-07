@@ -65,11 +65,82 @@ namespace Console_thread
             go_para(false);
         }
 
+        public int cnt = 0;
+        public  void Count()
+        {
+            while(cnt < 30)
+            {
+                cnt++;
+                Console.WriteLine(Thread.CurrentThread.Name + "count number is " + cnt);
+                Thread.Sleep(100);
+            }
+        }
+
+        public static void threadstart_test()
+        {
+            Program obj0 = new Program();
+            Thread.CurrentThread.Name = "Thread 0 ";
+
+            Program obj1 = new Program();
+            Thread thread1 = new Thread(new ThreadStart(obj1.Count));
+            thread1.Name = "Thread 1 ";
+
+            Program obj2 = new Program();
+            Thread thread2 = new Thread(new ThreadStart(obj2.Count));
+            thread2.Name = "Thread 2 ";
+
+            Program obj3 = new Program();
+            Thread thread3 = new Thread(new ThreadStart(obj3.Count));
+            thread3.Name = "Thread 3 ";
+
+            obj0.Count();
+            thread1.Start();
+            thread2.Start();
+            thread3.Start();
+            Thread.Sleep(200);
+            Console.WriteLine("200ms");
+            thread2.Suspend();
+            Thread.Sleep(200);
+            Console.WriteLine("200ms");
+            thread2.Resume();
+            Thread.Sleep(200);
+            Console.WriteLine("200ms");
+            thread2.Join();
+        }
+
+        private static void ThreadFuncOne()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(Thread.CurrentThread.Name + ":i=" + i);
+            }
+            Console.WriteLine(Thread.CurrentThread.Name + " has finished");
+        }
+
         static void Main(string[] args)
         {
             //thread_test();//write x,y
             //thread_go();//
-            thread_para();
+            //thread_para();
+            //threadstart_test();
+            Thread.CurrentThread.Name = "MainThread";
+
+            Thread newThread = new Thread(new ThreadStart(Program.ThreadFuncOne));
+            newThread.Name = "NewThread";
+
+            for (int j = 0; j < 20; j++)
+            {
+                if (j == 10)
+                {
+                    newThread.Start();
+                    newThread.Join();
+                }
+                else
+                {
+                    Console.WriteLine(Thread.CurrentThread.Name + ":j=" + j);
+                }
+            }
+            Console.Read();
 
         }
 
