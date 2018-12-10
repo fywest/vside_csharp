@@ -51,12 +51,12 @@ namespace WindowsFormsApp1
             // bkWorker.ReportProgress 会调用到这里，此处可以进行自定义报告方式
             this.progressBar1.Value = e.ProgressPercentage;
             int percent = (int)(e.ProgressPercentage / percentValue);
-            this.label1.Text = "处理进度:" + Convert.ToString(percent) + "%";
+            this.progress_label1.Text = "progressing:" + Convert.ToString(percent) + "%";
         }
 
         public void CompleteWork(object sender, RunWorkerCompletedEventArgs e)
         {
-            this.label1.Text = "处理完毕!";
+            this.progress_label1.Text = "complete!";
         }
 
         private int ProcessProgress(object sender, DoWorkEventArgs e)
