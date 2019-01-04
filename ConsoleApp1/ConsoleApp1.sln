@@ -59,6 +59,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xml_method", "xml_method\xm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json", "Json\Json.csproj", "{2E4B8D1F-5849-4FAD-BBFD-457DA8C4D78A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComboBox", "ComboBox\ComboBox.csproj", "{81349B8C-1102-4BB8-85D9-BF92CCAFBDA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -402,6 +404,18 @@ Global
 		{2E4B8D1F-5849-4FAD-BBFD-457DA8C4D78A}.Release|x64.Build.0 = Release|Any CPU
 		{2E4B8D1F-5849-4FAD-BBFD-457DA8C4D78A}.Release|x86.ActiveCfg = Release|Any CPU
 		{2E4B8D1F-5849-4FAD-BBFD-457DA8C4D78A}.Release|x86.Build.0 = Release|Any CPU
+		{81349B8C-1102-4BB8-85D9-BF92CCAFBDA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81349B8C-1102-4BB8-85D9-BF92CCAFBDA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81349B8C-1102-4BB8-85D9-BF92CCAFBDA1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{81349B8C-1102-4BB8-85D9-BF92CCAFBDA1}.Debug|x64.Build.0 = Debug|Any CPU
+		{81349B8C-1102-4BB8-85D9-BF92CCAFBDA1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{81349B8C-1102-4BB8-85D9-BF92CCAFBDA1}.Debug|x86.Build.0 = Debug|Any CPU
+		{81349B8C-1102-4BB8-85D9-BF92CCAFBDA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81349B8C-1102-4BB8-85D9-BF92CCAFBDA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81349B8C-1102-4BB8-85D9-BF92CCAFBDA1}.Release|x64.ActiveCfg = Release|Any CPU
+		{81349B8C-1102-4BB8-85D9-BF92CCAFBDA1}.Release|x64.Build.0 = Release|Any CPU
+		{81349B8C-1102-4BB8-85D9-BF92CCAFBDA1}.Release|x86.ActiveCfg = Release|Any CPU
+		{81349B8C-1102-4BB8-85D9-BF92CCAFBDA1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
