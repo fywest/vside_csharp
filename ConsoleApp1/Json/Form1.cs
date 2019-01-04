@@ -95,6 +95,7 @@ namespace Json
             MessageBox.Show(jsonMsg);
         }
 
+        //litJson
         private void button4_Click(object sender, EventArgs e)
         {
             List<Skill> skillList = new List<Skill>();
