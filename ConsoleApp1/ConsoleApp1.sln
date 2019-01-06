@@ -61,6 +61,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json", "Json\Json.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComboBox", "ComboBox\ComboBox.csproj", "{81349B8C-1102-4BB8-85D9-BF92CCAFBDA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INIOperation", "INIOperation\INIOperation.csproj", "{3131A658-DA65-4C66-B459-7DE0913AC678}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -416,6 +418,18 @@ Global
 		{81349B8C-1102-4BB8-85D9-BF92CCAFBDA1}.Release|x64.Build.0 = Release|Any CPU
 		{81349B8C-1102-4BB8-85D9-BF92CCAFBDA1}.Release|x86.ActiveCfg = Release|Any CPU
 		{81349B8C-1102-4BB8-85D9-BF92CCAFBDA1}.Release|x86.Build.0 = Release|Any CPU
+		{3131A658-DA65-4C66-B459-7DE0913AC678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3131A658-DA65-4C66-B459-7DE0913AC678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3131A658-DA65-4C66-B459-7DE0913AC678}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3131A658-DA65-4C66-B459-7DE0913AC678}.Debug|x64.Build.0 = Debug|Any CPU
+		{3131A658-DA65-4C66-B459-7DE0913AC678}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3131A658-DA65-4C66-B459-7DE0913AC678}.Debug|x86.Build.0 = Debug|Any CPU
+		{3131A658-DA65-4C66-B459-7DE0913AC678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3131A658-DA65-4C66-B459-7DE0913AC678}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3131A658-DA65-4C66-B459-7DE0913AC678}.Release|x64.ActiveCfg = Release|Any CPU
+		{3131A658-DA65-4C66-B459-7DE0913AC678}.Release|x64.Build.0 = Release|Any CPU
+		{3131A658-DA65-4C66-B459-7DE0913AC678}.Release|x86.ActiveCfg = Release|Any CPU
+		{3131A658-DA65-4C66-B459-7DE0913AC678}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
