@@ -159,7 +159,7 @@ void Hex::ParseHex(char *data)
 int main(int argc, char *argv[])
 {
 	freopen("in.txt", "r", stdin);
-//	freopen("out.txt", "w", stdout);
+	freopen("out.txt", "w", stdout);
 
 	Hex hex(':');
 	char ch;
@@ -167,7 +167,11 @@ int main(int argc, char *argv[])
 	while (cin>>ch)
 	{
 		hex.ParseRecord(ch);
-		cout<<"\n herer : "<<ch;
+		//if (ch == '\0')
+		//{
+		//	cout<<endl;
+		//}
+		//cout<<ch<<" "<<int(ch)<<endl;
 	}
 	fclose(stdout);
 	fclose(stdin);
