@@ -7,18 +7,29 @@
 #include <iostream>
 using namespace std;
 //获取记录标识
+/*
+Record-F :1001A000808184608083808182608083808181609F
+		 :10	01A0	00	80818460808380818260808380818160	9F
+		  01	2345    67  0x10= 16 byte =16 FF 
+RecordMark	-F : (3A)
+RecordLength-F 10	m_cBuffer[0,1]
+LoadOffset	-FF 01A0 m_cBuffer[2,5]
+RecordType	-F 00 m_cBuffer[6,7]
+Data		-X 80818460808380818260808380818160  (len-10)=date length
+Checksum	-F 9F
+*/
 char Hex::GetRecordMark()
 {
 	return this->m_cRecordMark;
 }
 //获取每条记录的长度
-size_t Hex::GetRecordLength()
+size_t Hex::GetRecordLength() // data length RecordLength-F 10	m_cBuffer[0,1]
 {
 	//char *len = (char*)malloc(sizeof(char)* 3);
 	if (strlen(m_cBuffer) >= 2)
 	{
 		char len[3];
-		len[0] = m_cBuffer[0];
+		len[0] = m_cBuffer[0]; //RecordLength-F 10	m_cBuffer[0,1]
 		len[1] = m_cBuffer[1];
 		len[2] = '\0';
 		char *p = NULL;
@@ -30,9 +41,9 @@ size_t Hex::GetRecordLength()
 	}
 }
 //获取装载偏移
-char* Hex::GetLoadOffset()
+char* Hex::GetLoadOffset() //LoadOffset	-FF 01A0 m_cBuffer[2,5]
 {
-	if (strlen(m_cBuffer) == (GetRecordLength() + 5) * 2)
+	if (strlen(m_cBuffer) == (GetRecordLength() + 5) * 2) // buffer length equal 10 bytes + data length
 	{
 		char *offset = (char*)malloc(sizeof(char) * 5);
 		for (int i = 0; i < 4; ++i)
@@ -51,7 +62,7 @@ char* Hex::GetRecordType()
 	if (strlen(m_cBuffer) == (GetRecordLength() + 5) * 2)
 	{
 		char *type = (char*)malloc(sizeof(char) * 3);
-		type[0] = m_cBuffer[6];
+		type[0] = m_cBuffer[6];//RecordType	-F 00 m_cBuffer[6,7]
 		type[1] = m_cBuffer[7];
 		type[2] = '\0';
 		m_pRecordType = type;
@@ -97,7 +108,7 @@ void Hex::ParseRecord(char ch)
 	size_t buf_len = strlen(m_cBuffer);
 	if (GetRecordMark() == ch)
 	{
-		m_bRecvStatus = true;
+		m_bRecvStatus = true;//Start new record
 		m_cBuffer[0] = '\0';
 		//m_nIndex = 0;
 		return;
@@ -141,7 +152,7 @@ void Hex::ParseRecord(char ch)
 		m_pChecksum = NULL;
 		m_bRecvStatus = false;
 	}
-	else if (m_bRecvStatus)
+	else if (m_bRecvStatus) //add one char to buffer
 	{
 		m_cBuffer[buf_len] = ch;
 		m_cBuffer[buf_len + 1] = '\0';
