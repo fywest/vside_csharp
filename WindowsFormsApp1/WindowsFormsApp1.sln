@@ -41,6 +41,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Console_HextoBin", "Console
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LTPSM_Test", "LTPSM_Test\LTPSM_Test.vcxproj", "{B71BF583-4157-41DA-B507-79F4064E37EA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Console_HexPSM", "Console_HexPSM\Console_HexPSM.vcxproj", "{36651692-F4C1-40F1-8D3A-BEF70CD8C29D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -275,6 +277,16 @@ Global
 		{B71BF583-4157-41DA-B507-79F4064E37EA}.Release|x64.Build.0 = Release|x64
 		{B71BF583-4157-41DA-B507-79F4064E37EA}.Release|x86.ActiveCfg = Release|Win32
 		{B71BF583-4157-41DA-B507-79F4064E37EA}.Release|x86.Build.0 = Release|Win32
+		{36651692-F4C1-40F1-8D3A-BEF70CD8C29D}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{36651692-F4C1-40F1-8D3A-BEF70CD8C29D}.Debug|x64.ActiveCfg = Debug|x64
+		{36651692-F4C1-40F1-8D3A-BEF70CD8C29D}.Debug|x64.Build.0 = Debug|x64
+		{36651692-F4C1-40F1-8D3A-BEF70CD8C29D}.Debug|x86.ActiveCfg = Debug|Win32
+		{36651692-F4C1-40F1-8D3A-BEF70CD8C29D}.Debug|x86.Build.0 = Debug|Win32
+		{36651692-F4C1-40F1-8D3A-BEF70CD8C29D}.Release|Any CPU.ActiveCfg = Release|Win32
+		{36651692-F4C1-40F1-8D3A-BEF70CD8C29D}.Release|x64.ActiveCfg = Release|x64
+		{36651692-F4C1-40F1-8D3A-BEF70CD8C29D}.Release|x64.Build.0 = Release|x64
+		{36651692-F4C1-40F1-8D3A-BEF70CD8C29D}.Release|x86.ActiveCfg = Release|Win32
+		{36651692-F4C1-40F1-8D3A-BEF70CD8C29D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
