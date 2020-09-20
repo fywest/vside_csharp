@@ -146,11 +146,24 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="conversions.h" />
+    <ClInclude Include="hex_file_parser.h" />
+    <ClInclude Include="in_circuit_programming_record_type_list_item_definition.h" />
+    <ClInclude Include="main_record_processor.h" />
+    <ClInclude Include="nvm.h" />
+    <ClInclude Include="nvm_data_helpers.h" />
+    <ClInclude Include="record_type_basic_definitions.h" />
+    <ClInclude Include="record_type_definitions.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="conversions.cpp" />
+    <ClCompile Include="hex_file_parser.cpp" />
     <ClCompile Include="LTPSMTest.cpp" />
+    <ClCompile Include="main_record_processor.cpp" />
+    <ClCompile Include="nvm.cpp" />
+    <ClCompile Include="nvm_data_helpers.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

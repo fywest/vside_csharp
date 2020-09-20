@@ -67,6 +67,7 @@ uint8_t detect_colons(uint8_t (*get_data)(void))
   c = get_data();
   if (c == ':')
   {
+	
     Serial.print(".");
   }
   return c;

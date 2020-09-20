@@ -41,7 +41,13 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef CONVERSIONS_H_
 #define CONVERSIONS_H_
 
-#include <Arduino.h>
+//#include <Arduino.h>
+
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+
 #include <stdbool.h>
 #include <stdint.h>
 

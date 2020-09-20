@@ -69,8 +69,8 @@ uint16_t httoi(char *value)
   };
   char *s = value;
   uint16_t result = 0;
-  boolean firsttime = true;
-  boolean found;
+  bool firsttime = true;
+  bool found;
   int i;
   if (*s == '0' && *(s + 1) == 'x') s += 2;
   while (*s != '\0')

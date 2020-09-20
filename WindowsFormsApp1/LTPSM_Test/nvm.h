@@ -45,10 +45,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <stdbool.h>
 #include <stdint.h>
 #include <avr/pgmspace.h>
-#include "../LT_PMBUS/LT_PMBus.h"
-#include "../LT_SMBUS/LT_SMBusNoPec.h"
-#include "../LT_SMBUS/LT_SMBusPec.h"
-#include "../LT_SMBUS/LT_I2CBus.h"
+#include "./LT_PMBUS/LT_PMBus.h"
+#include "./LT_SMBUS/LT_SMBusNoPec.h"
+#include "./LT_SMBUS/LT_SMBusPec.h"
+#include "./LT_SMBUS/LT_I2CBus.h"
 #include "main_record_processor.h"
 #include "hex_file_parser.h"
 

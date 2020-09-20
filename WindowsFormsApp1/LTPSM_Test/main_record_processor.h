@@ -43,8 +43,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <stdlib.h>
 #include <stdint.h>
-#include "../LT_SMBUS/LT_SMBusNoPec.h"
-#include "../LT_SMBUS/LT_SMBusPec.h"
+#include "./LT_SMBUS/LT_SMBusNoPec.h"
+#include "./LT_SMBUS/LT_SMBusPec.h"
 #include "record_type_definitions.h"                  /* Record Type Definitions */
 #include "in_circuit_programming_record_type_list_item_definition.h"  /* Linked List Structure for buffering all records before programming from Intel HEX file */
 #include "nvm_data_helpers.h"
